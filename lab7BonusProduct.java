@@ -1,26 +1,26 @@
 public class lab7BonusProduct {
-    private String prodName;
-    private int quantity;
+    private String name;
+    private int stock;
 
-    public lab7BonusProduct(String prodName, int quantity) {
-        this.prodName = prodName;
-        this.quantity = quantity;
+    public lab7BonusProduct(String n, int s) {
+        name = n;
+        stock = s;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void buyOne() {
-        if (quantity > 0) {
-            quantity--;
-            System.out.println("Bought 1 " + prodName);
+        if (stock == 0) {
+            System.out.println("the product is out of stock.");
         } else {
-            System.out.println(prodName + " is Out of stock");
+            stock--;
+            System.out.println("You successfully bought: " + name);
         }
     }
 
     public void printInfo() {
-        System.out.println(prodName + " stock = " + quantity);
-    }
-
-    public String getProdName() {
-        return prodName;
+        System.out.println("Product Name: " + name + " Stock: " + stock);
     }
 }
